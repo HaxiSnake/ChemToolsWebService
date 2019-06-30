@@ -48,19 +48,27 @@ class RegistrationManager(models.Manager):
         """
         Validate an activation key and activation the corresponding User if vaild.
         """
+        print("key in ac_user:",activation_key)
+        print(type(activation_key))
         if SHA1_RE.search(activation_key):
+            #print added by dong 2019-6-20
+            print("after sha1_re")
             try:
                 profile = self.get(activation_key=activation_key)
+                print("after get")
             except self.model.DoesNotExist:
+                print("does not exist")
                 return False
             if not profile.activation_key_expired():
+                print("profile activation_key_expired not done")
                 user = profile.user
                 user.is_active = True
                 user.save()
                 profile.activation_key = "ALREADY_ACTIVATED"
                 profile.save()
+                print("save and return user")
                 return user
-
+        print("sha1_re failed")
         return False
 
     def create_inactive_user(self, request,

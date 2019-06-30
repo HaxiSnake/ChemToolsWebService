@@ -19,6 +19,7 @@ from users.forms import (RegistrationFormUniqueEmail, UserProfileForm,
                          PasswordForm)
 from utils import basic_auth_api, make_json_response
 
+from utils import loginfo #added by jiangdong
 
 @require_POST
 @csrf_exempt
@@ -84,8 +85,19 @@ def admin_account(request):
 def active(request, activation_key,
            template_name='registration/activate.html',
            extra_context=None):
+    # modified by dong 2019-6-19
+    # try to show log in active account.
+    info="active begin!"
+    loginfo(p=info)
+    print(info)
     activation_key = activation_key.lower()
+    info="ac key is:"+activation_key
+    loginfo(p=info)
+    print(info)
     account = RegistrationProfile.objects.activate_user(activation_key)
+    info="accout get!"
+    loginfo(p=info)
+    print(info)
     if extra_context is None:
         extra_context = {}
 
@@ -95,7 +107,9 @@ def active(request, activation_key,
 
     data = {'account': account,
             'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS}
-
+    info="active over!"
+    loginfo(p=info)
+    print(info)
     return render_to_response(template_name, data,
                               context_instance=context)
 

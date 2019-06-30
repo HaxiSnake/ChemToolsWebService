@@ -99,7 +99,7 @@ def generate_mol_image(singletask):
     mol = pybel.readfile("mol", fpath).next()
     singletask.file_obj.smiles = ("%s" % mol).split("\t")[0]
 
-    pname = str(uuid.uuid4()) + ".png"
+    pname = str(uuid.uuid4()) + ".jpg"
     if not os.path.exists(settings.SEARCH_IMAGE_PATH):
         os.makedirs(settings.SEARCH_IMAGE_PATH)
 

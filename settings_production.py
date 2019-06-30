@@ -1,7 +1,7 @@
 #coding: utf-8
 from settings import *
 
-TEMPLATE_DEBUG = DEBUG = False
+TEMPLATE_DEBUG = DEBUG = True
 
 PRODUCTION_FLAG = "预览版"
 
@@ -17,7 +17,8 @@ DATABASES = {
 }
 
 #celery task queue
-BROKER_URL = "redis://redis-production-server:6379/0"
+#BROKER_URL = "redis://redis-production-server:6379/0"
+BROKER_URL = "redis://127.0.0.1:6379/0"
 BROKER_BACKEND = "redis"
 BROKER_PORT = 6379
 

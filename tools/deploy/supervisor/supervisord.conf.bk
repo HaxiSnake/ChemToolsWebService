@@ -4,7 +4,7 @@
 file=/var/run/supervisor.sock   ; (the path to the socket file)
 chmod=0700                       ; sockef file mode (default 0700)
 username=admin
-password=654321,dj
+password=
 
 [supervisord]
 logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
@@ -30,6 +30,4 @@ serverurl=unix:///var/run//supervisor.sock ; use a unix:// URL  for a unix socke
 files = /etc/supervisor/conf.d/*.conf
 
 [inet_http_server]
-port=10.7.51.19:18001
-username=admin
-password=654321,dj
+port=192.168.1.100:18001

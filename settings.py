@@ -6,7 +6,7 @@ from os.path import join
 SETTINGS_ROOT = os.path.dirname(__file__)
 
 ADMINS = (
-    ('tianwei', '416774905@qq.com'),
+    ('cptp', 'cptp_dlut@163.com'),
 )
 
 MANAGERS = ADMINS
@@ -139,13 +139,13 @@ ACCOUNT_ACTIVATION_DAYS = 30
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-SERVER_EMAIL = "chem_dlut@126.com"
+SERVER_EMAIL = "cptp_dlut@163.com"
 EMAIL_SUBJECT_PREFIX = '[Chemistry]'
-EMAIL_HOST = 'smtp.126.com'
+EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = '25'
-EMAIL_HOST_USER = 'chem_dlut@126.com'
-EMAIL_HOST_PASSWORD = 'chemdlut'
-DEFAULT_FROM_EMAIL = 'chem_dlut@126.com'
+EMAIL_HOST_USER = 'cptp_dlut@163.com'
+EMAIL_HOST_PASSWORD = '654321cptp'
+DEFAULT_FROM_EMAIL = 'cptp_dlut@163.com'
 EMAIL_USE_TLS = False
 
 #########################

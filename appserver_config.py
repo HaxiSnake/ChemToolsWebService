@@ -1,6 +1,6 @@
 #coding: utf-8
-
-bind = 'unix:/tmp/chemistry_appserver.sock'
+bind = '10.7.51.19:4321'
+#bind = 'unix:/tmp/chemistry_appserver.sock'
 workers = 6
 worker_class = 'sync'
 
@@ -12,11 +12,11 @@ keepalive = 2
 debug = False
 
 worker_connections = 1000
-user = 'est863'
-group = 'est863'
+user = 'jiangdong'
+group = 'jiangdong'
 
 proc_name = 'chemistry-appserver'
 
 loglevel = 'debug'
-logfile = '/var/chemistry/log/gunicorn.log'
+logfile = '/home/jiangdong/workspace/CTWS/chemistry/log/gunicorn.log'
 accesslog = '-'
